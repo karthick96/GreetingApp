@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Greetings!</title>
+		<link rel="stylesheet" href="{{ 
+		url_for('static', filename='css/main.css')}}">
+	</head>
+	
+	<body>
+		<img src="../static/images/Greetings.png">
+		<br>
+		<form action="greet" method="post">
+			{% for msg in get_flashed_messages()%}
+				<p>{{msg}}</p>
+			{% endfor %}
+			<br>
+			<input type="text" name="name_input">
+			<br>
+			<input type="submit", value="GREET" id="greet">
+	</body>
+</html>
